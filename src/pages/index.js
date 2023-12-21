@@ -1,19 +1,21 @@
 import { Inter } from 'next/font/google'
 import { useEffect, useState } from 'react'
 import { rank } from '@/utils/wackometer'
+import { Ranking } from '@/components/Ranking'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const [inputText, setInputText] = useState("")
-  const [rankResult, setRankResult] = useState({
+  const [ranking, setRanking] = useState({
     score: 0,
-    validations: []
+    validations: [],
   })
 
   useEffect(() => {
     const newRank = rank(inputText);
-    setRankResult(newRank)
+    setRanking(newRank)
+    // console.log()
   }, [inputText])
 
   return (
@@ -28,7 +30,8 @@ export default function Home() {
           setInputText(e.target.value)
         }} />
       </div>
-      <p>{JSON.stringify(rankResult)}</p>
+      <p>{JSON.stringify(ranking)}</p>
+      <Ranking ranking={ranking} />
     </main>
   )
 }
