@@ -11,16 +11,13 @@ export const Ranking = ({ ranking }) => {
   const direction = ranking.score < 0 ? "negative" : "positive"
   return (
     <>
-      <div>
+      <div className="w-full md:w-[80%]">
         <div className="slider">
           <div
             className={classNames("slider-bar", `slider-${direction}`)}
             style={{ width: percentage }}
           />
         </div>
-        <p className="explanation">
-          Positive rankings result in greater reach and engangement.
-        </p>
         <p>
           Score: <strong>{ranking.score}</strong>
         </p>
