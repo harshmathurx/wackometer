@@ -26,12 +26,12 @@ export default function Home() {
         <meta name="description" content="I refuse to elaborate." />
       </Head>
       <main
-        className={`flex gap-y-10 flex-col items-center justify-between p-24 ${inter.className}`}
+        className={`flex gap-y-10 flex-col items-center justify-between p-12 ${inter.className} w-[95%]`}
       >
         <h1 className='text-3xl font-bold'>Wackometer</h1>
-        <div className='flex flex-col text-center'>
+        <div className='flex flex-col text-center w-full md:w-[75%]'>
           <label htmlFor="input">Please enter the text here</label>
-          <textarea rows="3" cols="75" className='border-gray-500 border-2 p-2 rounded-md' id='input' onChange={(e) => {
+          <textarea placeholder='beep boop' rows="3" cols="75" className='border-gray-500 border-2 p-2 rounded-md' id='input' onChange={(e) => {
             e.preventDefault()
             setInputText(e.target.value)
           }} />
